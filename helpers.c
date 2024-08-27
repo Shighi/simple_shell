@@ -19,8 +19,7 @@ void _puts(char *str)
  * _putchar - Writes the character c to stdout
  * @c: The character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success 1. On error, -1 is returned, and errno is set
  */
 int _putchar(char c)
 {
@@ -40,17 +39,13 @@ char *_strdup(const char *str)
 
 	if (str == NULL)
 		return (NULL);
-
 	while (*str++)
 		length++;
-
 	ret = malloc(sizeof(char) * (length + 1));
 	if (!ret)
 		return (NULL);
-
 	for (length++; length--;)
 		ret[length] = *--str;
-
 	return (ret);
 }
 
@@ -81,8 +76,7 @@ int _strcmp(char *s1, char *s2)
  * @s: The string to be parsed
  * @c: The character to look for
  *
- * Return: A pointer to the first occurrence of the character c in the string s,
- * or NULL if the character is not found
+ * Return: Pointer to the first occurrence of c in s, or NULL if not found
  */
 char *_strchr(char *s, char c)
 {
@@ -90,6 +84,5 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 			return (s);
 	} while (*s++ != '\0');
-
 	return (NULL);
 }

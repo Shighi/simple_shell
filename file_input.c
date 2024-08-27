@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * process_file - Process commands from a file
+ * process_file - Processes commands from a file
  * @filename: Name of the file to process
  *
  * Return: 0 on success, -1 on failure
@@ -12,6 +12,7 @@ int process_file(char *filename)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
+	char **args;
 
 	fp = fopen(filename, "r");
 	if (fp == NULL)
@@ -28,10 +29,8 @@ int process_file(char *filename)
 		handle_comments(line);
 		handle_logical_operators(line);
 
-		char **args = parse_input(line);
-
+		args = parse_input(line);
 		execute_command(args);
-
 		free(args);
 	}
 

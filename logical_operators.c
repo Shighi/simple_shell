@@ -4,7 +4,6 @@
  * execute_command_list - Executes a list of commands
  * @commands: Array of command strings
  * @num_commands: Number of commands in the array
- *
  * Return: Status of the last executed command
  */
 int execute_command_list(char **commands, int num_commands)
@@ -34,13 +33,12 @@ int execute_command_list(char **commands, int num_commands)
 /**
  * handle_logical_operators - Handles && and || operators
  * @input: The input string
- *
  * Return: Status of the last executed command
  */
 int handle_logical_operators(char *input)
 {
 	char *token, *saveptr;
-	char *delimiters = "&|";
+	char *delimiters = "&|;";
 	char **commands = NULL;
 	int num_commands = 0;
 	int status;
@@ -52,7 +50,7 @@ int handle_logical_operators(char *input)
 		commands[num_commands] = token;
 		num_commands++;
 
-		if (*saveptr == '&' || *saveptr == '|')
+		if (*saveptr == '&' || *saveptr == '|' || *saveptr == ';')
 		{
 			commands = realloc(commands, sizeof(char *) * (num_commands + 1));
 			commands[num_commands] = saveptr;
