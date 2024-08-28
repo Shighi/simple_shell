@@ -1,0 +1,54 @@
+.TH SIMPLE_SHELL 1 "28 October 2024" "Version 0.1" "Simple Shell Manual"
+
+.SH NAME
+simple_shell \- Basic interactive shell for Linux
+
+.SH SYNOPSIS
+.B simple_shell
+[\fIFILE\fR]
+
+.SH DESCRIPTION
+\fBsimple_shell\fR is a minimalist command-line interpreter for Unix-like systems. It executes commands from standard input or files.
+
+.SH FEATURES
+.IP \[bu] 2
+Interactive command execution
+.IP \[bu]
+Non-interactive mode (script execution)
+.IP \[bu]
+Basic built-in commands (cd, exit, env)
+.IP \[bu]
+PATH resolution for commands
+.IP \[bu]
+Simple command line editing
+
+.SH USAGE
+Interactive mode:
+.PP
+.nf
+.RS
+$ ./simple_shell
+($) [command]
+.RE
+.fi
+
+Non-interactive mode:
+.PP
+.nf
+.RS
+$ echo "[command]" | ./simple_shell
+.RE
+.fi
+
+.SH EXIT STATUS
+Returns 0 for success, non-zero for failure.
+
+.SH BUGS
+Requires single space after command arguments.
+
+.SH AUTHORS
+Written by Daisy Mwambi and Kwame Amukhobu.
+
+.SH SEE ALSO
+.BR sh (1),
+.BR bash (1)
