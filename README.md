@@ -31,18 +31,18 @@ This project is a simple UNIX command line interpreter, also known as a shell. I
 
 To compile the shell, use the following command:
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-Copy
+
 ## Usage
 
 To start the shell in interactive mode:
 ./hsh
-Copy
+
 To use the shell in non-interactive mode:
 echo "command" | ./hsh
 Copy
 Or to execute commands from a file:
 ./hsh script_file
-Copy
+
 ## Examples
 
 Interactive mode:
@@ -51,7 +51,7 @@ $ ./hsh
 hsh main.c shell.c
 ($) exit
 $
-Copy
+
 Non-interactive mode:
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
@@ -64,7 +64,8 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
-Copy
+
 ## Authors
 Daisy Mwambi
-Amukhobu
+
+ Kwame Amukhobu
